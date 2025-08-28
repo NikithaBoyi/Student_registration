@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Student Registration Form</h2>
+    <form id="studentForm" action="http://localhost:3000/register" method="POST" enctype="multipart/form-data">
+
+      <!-- Text -->
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+      <div class="error" id="nameError"></div>
+
+      <!-- Email -->
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <div class="error" id="emailError"></div>
+
+      <!-- Password -->
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <div class="error" id="passwordError"></div>
+
+      <!-- Phone -->
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+      <div class="error" id="phoneError"></div>
+
+      <!-- Number -->
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" min="15" max="60" required>
+
+      <!-- Date -->
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <!-- Time -->
+      <label for="examTime">Preferred Exam Time</label>
+      <input type="time" id="examTime" name="examTime">
+
+      <!-- Month -->
+      <label for="admissionMonth">Admission Month</label>
+      <input type="month" id="admissionMonth" name="admissionMonth">
+
+      <!-- Week -->
+      <label for="joiningWeek">Joining Week</label>
+      <input type="week" id="joiningWeek" name="joiningWeek">
+
+      <!-- Radio -->
+      <label>Gender</label>
+      <input type="radio" name="gender" value="Male"> Male
+      <input type="radio" name="gender" value="Female"> Female
+      <input type="radio" name="gender" value="Other"> Other
+
+      <!-- Checkbox -->
+      <label>Languages Known</label>
+      <input type="checkbox" name="languages" value="English"> English
+      <input type="checkbox" name="languages" value="Hindi"> Hindi
+      <input type="checkbox" name="languages" value="Telugu"> Telugu
+
+      <!-- Dropdown -->
+      <label for="course">Course Applying For</label>
+      <select id="course" name="course" required>
+        <option value="">--Select--</option>
+        <option value="btech">B.Tech</option>
+        <option value="mba">MBA</option>
+        <option value="msc">M.Sc</option>
+        <option value="phd">PhD</option>
+      </select>
+
+      <!-- Multi-select -->
+      <label for="skills">Select Your Skills</label>
+      <select id="skills" name="skills" multiple size="4">
+        <option value="c">C</option>
+        <option value="java">Java</option>
+        <option value="python">Python</option>
+        <option value="web">Web Development</option>
+      </select>
+
+      <!-- Range -->
+      <label for="percentage">Last Exam Percentage</label>
+      <input type="range" id="percentage" name="percentage" min="0" max="100" value="70">
+      <span id="rangeValue">70%</span>
+
+      <!-- URL -->
+      <label for="portfolio">Portfolio/LinkedIn URL</label>
+      <input type="url" id="portfolio" name="portfolio">
+
+      <!-- Search -->
+      <label for="search">Search Department</label>
+      <input type="search" id="search" name="search">
+
+      <!-- Color -->
+      <label for="color">Pick Your Favorite Theme Color</label>
+      <input type="color" id="color" name="color">
+
+      <!-- Textarea -->
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <!-- File Uploads -->
+      <label for="photo">Upload Passport Photo (100x100 px)</label>
+      <input type="file" id="photo" name="photo" accept="image/png, image/jpeg">
+      <div class="error" id="photoError"></div>
+      <img id="photoPreview" style="display:none; width:100px; height:100px; border:1px solid #ccc; margin-top:10px;">
+
+      <label for="signature">Upload Signature (100x50 px)</label>
+      <input type="file" id="signature" name="signature" accept="image/png, image/jpeg">
+      <div class="error" id="signatureError"></div>
+      <img id="signaturePreview" style="display:none; width:100px; height:50px; border:1px solid #ccc; margin-top:10px;">
+
+      <label for="resume">Upload Resume (PDF)</label>
+      <input type="file" id="resume" name="resume" accept="application/pdf">
+
+      <!-- Hidden field -->
+      <input type="hidden" name="formType" value="studentRegistration">
+
+      <!-- Terms -->
+      <label>
+        <input type="checkbox" name="terms" required> I agree to the Terms and Conditions
+      </label>
+
+      <!-- Submit & Reset -->
+      <button type="submit">Register</button>
+      <button type="reset">Reset</button>
+    </form>
+  </div>
+  <script src="validate.js"></script>
+</body>
+</html>
